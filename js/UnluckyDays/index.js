@@ -1,3 +1,16 @@
+// popular solution
+
+function unluckyDays(year){
+    let unlucky = 0;
+    for (var i = 0; i < 12; i++) {
+        if(new Date(year, i, 13).getDay() === 5){
+            unlucky++;
+        }
+    }
+    return unlucky;
+}
+
+// my solution
 function unluckyDays(year) {
     let fri13s = 0;
     for (let i = 0; i <= 11; i++) {
@@ -21,3 +34,6 @@ function unluckyDays(year) {
     }
     return fri13s;
 }
+
+// What I thought
+// I realized that I don't have to create Date instance from day 1, I just had to create instance of the day 13!
